@@ -2,15 +2,22 @@
 
 {
     "type": "categorical",
+    "name": "name1",
     "label": "Categorical",
-    "id": "id-0",
-    "options": ["option-1", "option-2", "option-3", "option-4", "option-5"]
+
+    "values": [
+    ["option-1", "Option 1"],
+    ["option-2", "Option 2"],
+    ["option-3", "Option 3"],
+    ["option-4", "Option 4"],
+    ["option-5", "Option 5"]
+    ]
 },
 
 {
     "type": "slider",
+    "name": "name2",
     "label": "Slider",
-    "id": "id-1",
     "min": 0,
     "max": 100,
     "step": 10,
@@ -22,9 +29,13 @@
 {
     "type": "boolean",
     "label": "Boolean",
-    "id": "id-2",
-    "options": ["option-1", "option-2", "option-3", "option-4", "option-5"],
-    "value": [true, true, false, false, true]
+    "values": [
+    ["option-1", "Option 1", true],
+    ["option-2", "Option 2", true],
+    ["option-3", "Option 3", false],
+    ["option-4", "Option 4", false],
+    ["option-5", "Option 5", true]
+    ]
 }
 
 ]

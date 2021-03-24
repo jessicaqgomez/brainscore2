@@ -1,10 +1,36 @@
 
 from tkinter import Button, Label
+import datetime
+import numpy as np
 
 
 ########################################################################
 class Builder:
     """"""
+
+    # ----------------------------------------------------------------------
+    def build_time_series(self, _, parameter):
+        """"""
+        self.time_series[parameter['name']] = parameter.copy()
+        self.time_series[parameter['name']]['start'] = 0
+        self.update_time_series(parameter['name'])
+
+    # ----------------------------------------------------------------------
+    def update_time_series(self, name):
+        """"""
+        parameter = self.time_series[name]
+        start = parameter['start']
+        t = np.linspace(start, start + parameter['package_size']
+                        / parameter['sample_frequency'], parameter['package_size'])
+
+        parameter['start'] = t[-1]
+        signal = eval(parameter['value'])
+
+        self.stream_data(parameter['type'], name, signal.tolist())
+
+        timeout_ms = (parameter['package_size']
+                      / parameter['sample_frequency']) * 1000
+        self.after(int(timeout_ms), lambda: self.update_time_series(name))
 
     # ----------------------------------------------------------------------
     def build_categorical(self, frame, parameter):

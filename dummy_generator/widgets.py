@@ -19,6 +19,7 @@ class BrainscoreSimulator(Frame, Builder):
         self.parent = parent
         self.parameters = {}
         self.labels = {}
+        self.time_series = {}
 
         self.streamer = OSCStreamer('127.0.0.1', 5005)
 
@@ -54,7 +55,8 @@ class BrainscoreSimulator(Frame, Builder):
                 frame = Frame(notebook, relief=FLAT)
                 if builder := getattr(self, f'build_{parameter["type"]}', None):
                     builder(frame, parameter)
-                    notebook.add(frame, text=parameter['label'])
+                    if parameter["type"] != 'time_series':
+                        notebook.add(frame, text=parameter['label'])
 
         self.parent.bind("<Destroy>", self.close_frame)
 
@@ -73,6 +75,7 @@ class BrainscoreSimulator(Frame, Builder):
             'timestamp': datetime.now().timestamp(),
         }
         data = json.dumps(data)
+        # if type_ != 'time_series':
         self.log(data)
         self.streamer.write(data)
 

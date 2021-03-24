@@ -1,16 +1,44 @@
 [
 
+
+{
+    "type": "time_series",
+    "name": "signal-01",
+    "value": "np.sin(2*np.pi*3*t)",
+    "sample_frequency": 1000,
+    "package_size": 2000
+},
+
+
+{
+    "type": "time_series",
+    "name": "signal-02",
+    "value": "np.sin(2*np.pi*5*t)",
+    "sample_frequency": 1000,
+    "package_size": 1000
+},
+
+
+{
+    "type": "time_series",
+    "name": "signal-03",
+    "value": "np.cos(2*np.pi*100*t)",
+    "sample_frequency": 1000,
+    "package_size": 500
+},
+
+
 {
     "type": "categorical",
     "name": "name1",
     "label": "Categorical",
 
     "values": [
-    ["option-1", "Option 1"],
-    ["option-2", "Option 2"],
-    ["option-3", "Option 3"],
-    ["option-4", "Option 4"],
-    ["option-5", "Option 5"]
+    ["option-1", "Name Option 1"],
+    ["option-2", "Name Option 2"],
+    ["option-3", "Name Option 3"],
+    ["option-4", "Name Option 4"],
+    ["option-5", "Name Option 5"]
     ]
 },
 
@@ -20,8 +48,7 @@
     "label": "Slider",
     "min": 0,
     "max": 100,
-    "step": 10,
-    "value": 50 ,
+    "value": 0,
     "increase_modifiers": ["+10", "+5", "+1"],
     "decrease_modifiers": ["-1", "-5", "-10"]
 },
@@ -30,11 +57,11 @@
     "type": "boolean",
     "label": "Boolean",
     "values": [
-    ["option-1", "Option 1", true],
-    ["option-2", "Option 2", true],
-    ["option-3", "Option 3", false],
-    ["option-4", "Option 4", false],
-    ["option-5", "Option 5", true]
+    ["boolean-1", "Name Option 1", true],
+    ["boolean-2", "Name Option 2", true],
+    ["boolean-3", "Name Option 3", false],
+    ["boolean-4", "Name Option 4", false],
+    ["boolean-5", "Name Option 5", true]
     ]
 }
 

@@ -48,7 +48,7 @@ class BrainscoreSimulator(Frame, Builder):
         self.logging.grid(row=1, column=0, sticky=N + S
                           + W + E, padx=(0, 0), pady=(5, 0))
 
-        with open('interface.json') as file:
+        with open(r'C:\Users\jessi\Documents\GitHub\brainscore2\dummy_generator\interface.json') as file:
             interface = json.load(file)
 
             for parameter in interface:

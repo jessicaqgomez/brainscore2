@@ -4,7 +4,7 @@
 {
     "type": "time_series",
     "name": "signal-01",
-    "value": "np.sin(2*np.pi*3*t)",
+    "value": "np.absolute(np.sin(2*np.pi*3*t))",
     "sample_frequency": 1000,
     "package_size": 2000
 },
@@ -13,7 +13,7 @@
 {
     "type": "time_series",
     "name": "signal-02",
-    "value": "np.sin(2*np.pi*5*t)",
+    "value": "np.absolute(np.sin(2*np.pi*5*t))",
     "sample_frequency": 1000,
     "package_size": 1000
 },
@@ -22,7 +22,7 @@
 {
     "type": "time_series",
     "name": "signal-03",
-    "value": "np.cos(2*np.pi*100*t)",
+    "value": "np.absolute(np.cos(2*np.pi*100*t))",
     "sample_frequency": 1000,
     "package_size": 500
 },

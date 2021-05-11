@@ -25,9 +25,9 @@ class Builder:
 
         parameter['start'] = t[-1]
         signal = eval(parameter['value'])
-
-        self.stream_data(parameter['type'], name, signal.tolist())
-
+        
+        self.stream_data(parameter['type'], name, (signal.tolist())[:12])
+       
         timeout_ms = (parameter['package_size']
                       / parameter['sample_frequency']) * 1000
         self.after(int(timeout_ms), lambda: self.update_time_series(name))

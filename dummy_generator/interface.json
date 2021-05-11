@@ -6,7 +6,7 @@
     "name": "signal-01",
     "value": "np.absolute(np.sin(2*np.pi*3*t))",
     "sample_frequency": 1000,
-    "package_size": 2000
+    "package_size": 100
 },
 
 
@@ -15,7 +15,7 @@
     "name": "signal-02",
     "value": "np.absolute(np.sin(2*np.pi*5*t))",
     "sample_frequency": 1000,
-    "package_size": 1000
+    "package_size": 200
 },
 
 
